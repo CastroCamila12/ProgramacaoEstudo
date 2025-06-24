@@ -5,7 +5,7 @@
 int main(){
 
   int escolhaJogador;
-  int escolhaComputador = rand() % 3 + 1;;
+  int escolhaComputador = rand() % 3 + 1;
   srand(time(0));
 
   printf(" *** Jogo de Jokenpô *** \n");
@@ -17,8 +17,7 @@ int main(){
   scanf("%d", &escolhaJogador);
 
 
-  switch (escolhaJogador)
-  {
+  switch (escolhaJogador){
     case 1:
       printf("Jogador: Pedra - ");
       break;
