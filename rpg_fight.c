@@ -4,270 +4,141 @@
 
 int main(){
 
-int handicap = 0;
-char *visao[] = {"Anemo", "Geo", "Electro", "Dendro", "Hydro", "Pyro", "Cryo"};
-int escolha1, escolha2, escolha3, escolha4, escolha5;
-int perg1, perg2, perg3;
-
-    printf("Quem é você em Teyvat?\n");
-    printf("Escolha aleatoriamente sua visão, arma, nação de origem, facção, e companheiro de viagem\n");
-    printf("\n");
-
-    printf("Primeiro, qual a sua VISÃO? Escolha sua flor preferida:\n");
-    printf("1. Lírio de vidro\n");
-    printf("2. Cecília\n");
-    printf("3. Flor de seda\n");
-    printf("4. Rosa arco-íris\n");
-    printf("5. Qingxin\n");
-    printf("6. Flor rociomarinha\n");
-    printf("7. Lótus nilotpala\n");
-    printf("\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &escolha1);
-
-    printf("\n");
-    printf("***--------------***\n");
-    printf("\n");
-
-    printf("Próxima questão! Qual a sua ARMA? Escolha um dos seguintes pratos:\n");
-    printf("1. Gateau Debord\n");
-    printf("2. Pudim de padisarah\n");
-    printf("3. Macarons\n");
-    printf("4. Tofu de amêndoas\n");
-    printf("5. Frango assado com mel\n");
-    printf("\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &escolha2);
-    
-    printf("\n");
-    printf("***--------------***\n");
-    printf("\n");
-
-    printf("Qual é a sua NAÇÃO DE ORIGEM? Escolha uma das criaturinhas a seguir:\n");
-    printf("1. Porcogumelo\n");
-    printf("2. Foquinha rotunda\n");
-    printf("3. Saurianos\n");
-    printf("4. Raposa do deserto\n");
-    printf("5. Kitsune\n");
-    printf("6. Lontra descontraída\n");
-    printf("7. Aranaras\n");
-    printf("8. Capivarinha\n");
-    printf("\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &escolha3);
-
-    printf("\n");
-    printf("***--------------***\n");
-    printf("\n");
-    
-    printf("Qual é a sua FACÇÃO? Escolha uma das frutinhas a seguir:\n");
-    printf("1. Valberry\n");
-    printf("2. Fruta Harra\n");
-    printf("3. Melão de lavanda\n");
-    printf("4. Cacahuatl\n");
-    printf("5. Tâmara\n");
-    printf("6. Fruta bulle\n");
-    printf("\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &escolha4);
-
-    printf("\n");
-    printf("***--------------***\n");
-    printf("\n");
-
-    printf("Por fim, qual o seu COMPANHEIRO DE VIAGEM? Escolha uma cor:\n");
-    printf("1. Azul\n");
-    printf("2. Vermelho\n");
-    printf("3. Branco\n");
-    printf("4. Amarelo\n");
-    printf("5. Verde\n");
-    printf("6. Violeta\n");
-    printf("7. Cinza\n");
-    printf("8. Laranja\n");
-    printf("\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &escolha5);
-
-    printf("\n");
-    printf("***--------------***\n");
-    printf("\n");
-
-
-if (escolha1 == 1){
-        printf("Sua visão é: %s\n", visao[6]);
-    }else if (escolha1 == 2){
-        printf("Sua visão é: %s\n", visao[4]);
-    }else if (escolha1 == 3){
-        printf("Sua visão é: %s\n", visao[0]);
-    }else if (escolha1 == 4){
-        printf("Sua visão é: %s\n", visao[5]);
-    }else if (escolha1 == 5){
-        printf("Sua visão é: %s\n", visao[3]);
-    }else if (escolha1 == 6){
-        printf("Sua visão é: %s\n", visao[2]);   
-    }else if (escolha1 == 7){
-        printf("Sua visão é: %s\n", visao[1]);
-    }
-
-
-if (escolha2 == 1){
-        printf("Sua arma é: espadão\n");
-    }else if (escolha2 == 2){
-        printf("Sua arma é: arco\n");
-    }else if (escolha2 == 3){
-        printf("Sua arma é: espada\n");
-    }else if (escolha2 == 4){
-        printf("Sua arma é: catalisador\n");
-    }else if (escolha2 == 5){
-        printf("Sua arma é: lança\n");
-    }
-
-
- if (escolha3 == 1){
-        printf("Sua nação de origem é: Mondstadt\n");
-    }else if (escolha3 == 2){
-        printf("Sua nação de origem é: Inazuma\n");
-    }else if (escolha3 == 3){
-        printf("Sua nação de origem é: Snezhnaya\n");
-    }else if (escolha3 == 4){
-        printf("Sua nação de origem é: Khaenri'ah\n");
-    }else if (escolha3 == 5){
-        printf("Sua nação de origem é: Natlan\n");
-    }else if (escolha3 == 6){
-        printf("Sua nação de origem é: Fontaine\n");   
-    }else if (escolha3 == 7){
-        printf("Sua nação de origem é: Sumeru\n");
-    }else if (escolha3 == 8){
-        printf("Sua nação de origem é: Liyue\n");
-    }
-
-if (escolha4 == 1){
-        printf("A sua facção é: Fatui\n");
-    }else if (escolha4 == 2){
-        printf("A sua facção é: Guilda de aventureiros\n");
-    }else if (escolha4 == 3){
-        printf("A sua facção é: Cavaleiros de Favonius\n");
-    }else if (escolha4 == 4){
-        printf("A sua facção é: Adepti\n");
-    }else if (escolha4 == 5){
-        printf("A sua facção é: Academia de Sumeru\n");
-    }else if (escolha4 == 6){
-        printf("Sem facção, você é um viajante independente\n");
-    }
-
-if (escolha5 == 1){
-        printf("Seu companheiro é: Skirk\n");
-        handicap += 4;
-    }else if (escolha5 == 2){
-        printf("Seu companheiro é: Paimon\n");
-    }else if (escolha5 == 3){
-        printf("Seu companheiro é: Xiao\n");
-        handicap += 5;
-    }else if (escolha5 == 4){
-        printf("Seu companheiro é: Andarilho\n");
-        handicap += 2;
-    }else if (escolha5 == 5){
-        printf("Seu companheiro é: Arlecchino\n");
-        handicap += 3;
-    }else if (escolha5 == 6){
-        printf("Seu companheiro é: Furina\n");
-        handicap += 1;   
-    }else if (escolha5 == 7){
-        printf("Seu companheiro é: Mavuika\n");
-        handicap += 5;
-    }else if (escolha5 == 8){
-        printf("Seu companheiro é: Venti\n");
-        handicap += 2;
-    }
-
-        printf("handicap: %d", handicap);
-
-
-    printf("\n");
-    printf("***--------------***\n");
-    printf("\n");
-
-    printf("Você e o seu companheiro de viagem começam uma pequena aventura!\n");
-
-    printf("Vocês estão de passagem em Fontaine.\n");
-    printf("Depois de comprarem suprimentos por lá, seguirão para Mondstadt.\n");
-    printf("Então, você se depara com uma escolha:\n");
-    printf("1. Escolher o navio maior. É uma embarcação moderna de Fontaine porém seu capitão é um pouco inexperiente.\n");
-    printf("2. Escolher embarcar numa pequena embarcação dos mercenários de Sumeru. Ao menos terão uma viagem segura.\n");
-    printf("3. Vamos de econômica mesmo, deixa eu chamar o quebra-ondas ali.\n");
-    printf("4. Perguntar a opinião do seu companheiro de viagem?\n");
-    printf("Digite sua escolha: ");
-    scanf("%d", &perg1);
-    printf("\n");
-
-
-    /*switch (perg1){
-        case 1:
-          printf("Vocês viajam com conforto. A rota escolhida entretanto os levam a um pequeno tumulto entre aberrações primordiais.\n");
-          printf("A inexperiência do capitão pesa e as ondas desestabilizam muito o navio.\n");
-          printf("Resultado: na confusão, vocês perdem grande parte dos suprimentos que compraram no mar!\n");
-          break;
-        case 2:
-          printf("Vocês viajam junto com os mercenários de Sumeru.\n");
-          printf("O capitão faz amizade com vocês após saber que são amigos e já trabalharam com a Dehya :D\n");
-          printf("Resultado: viagem tranquila, mas a proteção dos mercenários não é baratinha. Menos mora na carteira!\n");
-          break;
-        case 3:
-          printf("Espírito aventureiro a todo vapor! O quebra-ondas é pequeno mas é igual coração de mãe!\n");
-          printf("A viagem econômica demora mais e é mais cansativa que as outras opções.\n");
-          printf("Resultado:");
-
-
-    }   */
-
-    
-
-
-
-
-
-
-
-
-
 srand(time(0));
 int bossHP = 500;
-int act, dado, atk1, atk2;
+int playerHP = 500;
+int playerAP = 20;
+int actBoss, actPlayer, atk1, atk2, atkBoss1, atkBoss2, atkBoss3;
 
 
-//act1 = espada - 25 + random entre 0 e 20)
-//act2 = magia - 30 + random entre 0 e 20)
+//act1 = espada - 25 + random entre 1 e 20)
+//act2 = magia - 30 + random entre 1 e 20)
 
     printf("Você encontrou um inimigo poderoso pelo caminho!\n");
     printf("Ele é agressivo e iniciou um combate! O HP inicial dele é 500\n");
+    printf("Seu HP inicial é 500\n");
 
+    printf("\nCombate em andamento!\n");
+    
 do{
-    printf("escolha uma ação \n");
-    printf("1. ataque com espada\n");
-    printf("2. ataque com magia\n");
+    printf("\n");
+    printf(" ------------ \n");
+    printf("| SEU TURNO! |\n");
+    printf(" ------------ \n");
+    printf("*-----------------------*\n");
+    printf("| HP = %-4d             |\n", playerHP);
+    printf("| AP = %-4d             |\n", playerAP);
+    printf("| 1. ataque com espada  |\n");
+    printf("| 2. ataque com magia   |\n");
+    printf("| 3. defender           |\n");
+    printf("*-----------------------*\n");
     printf("digite a sua escolha: ");
-    scanf("%d", &act);
+    scanf("%d", &actPlayer); 
+    
+    printf("\n");
 
-int dado = rand() % 21;
-int atk1 = 25 + dado;
-int atk2 = 30 + dado;
+int dado1 = rand() % 20 + 1 ;
+atk1 = 25 + dado1;
+atk2 = 30 + dado1;
 
-    if (act == 1){
-        printf("O dano foi %d\n", atk1);
-        bossHP = bossHP - atk1;
-        printf("HP atual do boss: %d\n", bossHP);
-    }else{
-        printf("O dano foi %d\n", atk2);
-        bossHP = bossHP - atk2;
-        printf("HP atual do boss: %d\n", bossHP);
+    if (actPlayer == 1 || actPlayer == 2){
+        while (playerAP <= 1 && actPlayer != 3){
+            printf("Sem AP para atacar! Use a estância de defesa para recuperar AP.\n");
+            printf("Digite novamente sua escolha: ");
+            scanf("%d", &actPlayer);
+
+            printf("\n");
+        }
+        
     }
 
-} while (bossHP > 0);
+    if (actPlayer == 1){
+        printf("Você desferiu um ataque certeiro com sua espada\n");
+        printf("\n* Causou %d de dano no adversário! *\n", atk1);
+        playerAP -= 2;
+        bossHP -= atk1;
 
-    printf("parabéns, você venceu!");
+    } else if (actPlayer == 2){
+        printf("Você ataca com uma magia poderosa\n");
+        printf("\n* Causou %d de dano no adversário! *\n", atk2);
+        playerAP -= 4;
+        bossHP -= atk2;
+        
+    } else if (actPlayer == 3){
+        printf("\nDefesa!\n");
+        if (playerAP < 20){
+          playerAP += 2;  
+        } 
+    }
+ 
+    if (bossHP <= 0) break;
 
+int dado2 = rand() % 20 + 1;
+int dado3 = rand() % 10 + 1;
+atkBoss1 = 10 + dado2;
+atkBoss2 = 15 + dado2;
+atkBoss3 = 30 + dado2;
 
+    printf("\n");
+    printf(" ---------------------- \n");
+    printf("| TURNO DO ADVERSÁRIO! |\n");
+    printf(" ---------------------- \n");
+    printf("*-----------------------*\n");
+    printf("| HP = %-4d             |\n", bossHP);
+    printf("*-----------------------*\n");
+    printf("\n");
 
+    if (dado3 >= 1 && dado3 <= 4) {
+        if(actPlayer == 3){
+        printf("O adversário usou ataque 1\n");
+        printf("\n* Você sofreu %d de dano! *\n", atkBoss1 / 2);
+        } else {
+            printf("O adversário usou ataque 1\n");
+            printf("\n* Você sofreu %d de dano! *\n", atkBoss1);
+        }
+        
+        playerHP = playerHP - atkBoss1;
+    } 
+
+    if (dado3 >= 5 && dado3 <= 7){
+        if(actPlayer == 3){
+        printf("O adversário usou ataque 2\n");
+        printf("\n* Você sofreu %d de dano! *\n", atkBoss2 / 2);
+        } else {
+            printf("O adversário usou ataque 2\n");
+            printf("\n* Você sofreu %d de dano! *\n", atkBoss2);
+        }
+
+        playerHP = playerHP - atkBoss2;
+    } 
+    
+    if (dado3 == 8 || dado3 == 9){
+        if(actPlayer == 3){
+        printf("O adversário usou ataque 3\n");
+        printf("\nVocê sofreu %d de dano!\n", atkBoss3 / 2);
+        } else {
+            printf("O adversário usou ataque 3\n");
+            printf("\n* Você sofreu %d de dano! *\n", atkBoss3);
+        }
+
+        playerHP = playerHP - atkBoss3;
+    } 
+    
+    if (dado3 ==10) {
+        printf("O adversário errou o ataque!\n");
+        printf("\n* Você não recebeu nenhum dano! *\n");
+    }
+
+    if (playerHP <= 0) break;
+
+} while (1);
+
+    if (playerHP <= 0){
+        printf("Você foi derrotado!\n");
+    } else {
+        printf("Parabéns, você venceu!\n");
+    }
+        
 
 
 
