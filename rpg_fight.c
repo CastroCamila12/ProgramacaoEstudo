@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 int main(){
 
 srand(time(0));
 int bossHP = 500;
 int playerHP = 500;
 int playerAP = 20;
-int actBoss, actPlayer, atk1, atk2, atkBoss1, atkBoss2, atkBoss3;
+int actBoss, actPlayer, atk1, atk2, atkBoss1, atkBoss2, atkBoss3, danoRecebido;
 
 
 //act1 = espada - 25 + random entre 1 e 20)
@@ -53,20 +54,38 @@ atk2 = 30 + dado1;
     }
 
     if (actPlayer == 1){
-        printf("Você desferiu um ataque certeiro com sua espada\n");
-        printf("\n* Causou %d de dano no adversário! *\n", atk1);
+        if(dado1 == 20){
+            printf("Você usou sua espada e conseguiu um ATAQUE CRÍTICO!\n");
+            printf("\n* Causou %d de dano no adversário! *\n", atk1 * 2);
+        } else {
+            printf("Você desferiu um ataque certeiro com sua espada\n");
+            printf("\n* Causou %d de dano no adversário! *\n", atk1) ;
+        }
+    
+        printf("valor do dado: %d\n", dado1);
+
         playerAP -= 2;
         bossHP -= atk1;
+    }
 
-    } else if (actPlayer == 2){
-        printf("Você ataca com uma magia poderosa\n");
-        printf("\n* Causou %d de dano no adversário! *\n", atk2);
+    if (actPlayer == 2){
+        if(dado1 == 20){
+            printf("Você usou uma magia poderosa e conseguiu um ATAQUE CRÍTICO!\n");
+            printf("\n* Causou %d de dano no adversário! *\n", atk2 * 2);
+        } else {
+            printf("Você usa magia para atacar seu adversário\n");
+            printf("\n* Causou %d de dano no adversário! *\n", atk2);
+        }
+
+        printf("valor do dado: %d\n", dado1);
+
         playerAP -= 4;
-        bossHP -= atk2;
-        
-    } else if (actPlayer == 3){
+        bossHP -= atk2;   
+    } 
+
+    if (actPlayer == 3){
         printf("\nDefesa!\n");
-        if (playerAP < 20){
+      if (playerAP < 20){
           playerAP += 2;  
         } 
     }
@@ -89,39 +108,55 @@ atkBoss3 = 30 + dado2;
     printf("\n");
 
     if (dado3 >= 1 && dado3 <= 4) {
-        if(actPlayer == 3){
         printf("O adversário usou ataque 1\n");
-        printf("\n* Você sofreu %d de dano! *\n", atkBoss1 / 2);
-        } else {
-            printf("O adversário usou ataque 1\n");
-            printf("\n* Você sofreu %d de dano! *\n", atkBoss1);
-        }
+        danoRecebido = atkBoss1;
+
+      if (actPlayer == 3){
+        danoRecebido / 2;
+      } else if (dado2 == 20){
+        danoRecebido * 2;
+        printf("\nVocê recebeu um ATAQUE CRÍTICO! >_<\n");
+      } else if (actPlayer == 3 && dado2 == 20) {
+        printf("\nVocê recebeu um ATAQUE CRÍTICO! Porém mitigou metade do prejuízo por estar defendendo!\n");
+      }
         
-        playerHP = playerHP - atkBoss1;
-    } 
+    printf("\n* Você sofreu %d de dano! *\n", danoRecebido);
+    playerHP = playerHP - danoRecebido;
+
+    }     
 
     if (dado3 >= 5 && dado3 <= 7){
-        if(actPlayer == 3){
         printf("O adversário usou ataque 2\n");
-        printf("\n* Você sofreu %d de dano! *\n", atkBoss2 / 2);
+        
+        if(actPlayer == 3){
+        danoRecebido = atkBoss2 / 2;
+        } else if (dado2 == 20){
+            printf("\nVocê recebeu um ATAQUE CRÍTICO! >_<\n");
+            danoRecebido = atkBoss2 * 2;
         } else {
-            printf("O adversário usou ataque 2\n");
-            printf("\n* Você sofreu %d de dano! *\n", atkBoss2);
+            danoRecebido = atkBoss2;
         }
 
-        playerHP = playerHP - atkBoss2;
+    printf("\n* Você sofreu %d de dano! *\n", atkBoss2);
+    playerHP = playerHP - danoRecebido;
+
     } 
     
     if (dado3 == 8 || dado3 == 9){
-        if(actPlayer == 3){
         printf("O adversário usou ataque 3\n");
-        printf("\nVocê sofreu %d de dano!\n", atkBoss3 / 2);
+        
+        if (actPlayer == 3){
+        danoRecebido = atkBoss3 / 2;
+        } else if (dado2 == 20){        
+            printf("\nVocê recebeu um ATAQUE CRÍTICO! >_<\n");
+            danoRecebido = atkBoss3 * 2;
         } else {
-            printf("O adversário usou ataque 3\n");
-            printf("\n* Você sofreu %d de dano! *\n", atkBoss3);
+            danoRecebido = atkBoss3;
         }
 
-        playerHP = playerHP - atkBoss3;
+    printf("\n* Você sofreu %d de dano! *\n", atkBoss3);
+    playerHP = playerHP - danoRecebido;
+
     } 
     
     if (dado3 ==10) {
@@ -132,6 +167,12 @@ atkBoss3 = 30 + dado2;
     if (playerHP <= 0) break;
 
 } while (1);
+
+    printf("\n");
+    printf("*** ------------------ ***\n");
+    printf("***   Fim do combate   ***\n");
+    printf("*** ------------------ ***\n");
+    printf("\n");
 
     if (playerHP <= 0){
         printf("Você foi derrotado!\n");
