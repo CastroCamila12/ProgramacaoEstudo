@@ -43,7 +43,7 @@ atk1 = 25 + dado1;
 atk2 = 40 + dado1;
 
     while (actPlayer < 1 || actPlayer > 3){
-      printf("Opção inválida! Digite novemente sua escolha: ");
+      printf("Opção inválida! Digite novamente sua escolha: ");
       scanf("%d", &actPlayer);
       
       printf("\n");
