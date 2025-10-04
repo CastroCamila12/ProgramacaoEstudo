@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+typedef struct {
+  int itemCura;
+  int itemCuraGrande;
+  
+} inventorio;
+
+
 int validaEscolha (int playerAP){
   int actPlayer;
 
@@ -9,13 +16,14 @@ int validaEscolha (int playerAP){
     printf("Digite sua escolha: ");
     scanf("%d", &actPlayer);
 
-      if(actPlayer < 1 || actPlayer > 3){
+      if(actPlayer < 1 || actPlayer > 4){
         printf("Opção inválida!\n");
+        printf("\n");
        } else if ((actPlayer == 1 && playerAP < 2) || (actPlayer == 2 && playerAP < 4)){
         printf("Sem AP para atacar! Use a estância de defesa para recuperar 2 AP ou mude sua ação\n");
       }
 
-  } while ((actPlayer < 1 || actPlayer > 3) || (actPlayer == 1 && playerAP < 2) || (actPlayer == 2 && playerAP < 4));
+  } while ((actPlayer < 1 || actPlayer > 4) || (actPlayer == 1 && playerAP < 2) || (actPlayer == 2 && playerAP < 4));
 
   return actPlayer;
 }
@@ -48,8 +56,12 @@ int bossHP = 500;
 int playerHP = 500;
 int playerAP = 20;
 int rodada = 1;
-int actBoss, actPlayer, atk1, atk2, atkBoss1, atkBoss2, atkBoss3, danoRecebido;
+int turnoConsumido = 0;
+int a, actBoss, actPlayer, actInventorio, atk1, atk2, atkBoss1, atkBoss2, atkBoss3, danoRecebido;
 
+inventorio var1;
+var1.itemCura = 2;
+var1.itemCuraGrande = 1;
 
 //act1 = espada - 25 + random entre 1 e 20)
 //act2 = magia - 40 + random entre 1 e 20)
@@ -77,6 +89,7 @@ do{
     printf("| 1. ataque com espada  | |                      |\n");
     printf("| 2. ataque com magia   | |                      |\n");
     printf("| 3. defender           | |                      |\n");
+    printf("| 4. ver inventório     | |                      |\n");
     printf("*-----------------------* *----------------------*\n");
     
     actPlayer = validaEscolha(playerAP);
@@ -87,7 +100,51 @@ int dado1 = rand() % 20 + 1 ;
 atk1 = 25 + dado1;
 atk2 = 40 + dado1;
 
+while (actPlayer == 4){
+    printf("*-------------------------------*\n");
+    printf("|          INVENTÓRIO           |\n");
+    printf("| 1.Poção de cura: %-4d         |\n", var1.itemCura);
+    printf("| 2.Poção de cura grande: %-4d  |\n", var1.itemCuraGrande);
+    printf("|                               |\n");
+    printf("*-------------------------------*\n");
+    printf("Usar item? Digite o número do item ou 0 para voltar ao menu principal: \n");
+    scanf("%d", &actInventorio);
 
+      while (actInventorio < 0 || actInventorio > 2){
+        printf("Opção inválida!\n");
+        printf("Escolha novamente: \n");
+        scanf("%d", &actInventorio);
+      } 
+      
+      if(actInventorio == 1){
+        if (var1.itemCura > 0) {
+
+          playerHP += 80;
+          var1.itemCura--;
+          printf("Você usou poção de cura e recuperou 80 HP!\n");
+
+        } else {
+          printf("Não há itens para usar!\n");
+        }
+
+      } else if (actInventorio == 2){
+        if(var1.itemCuraGrande > 0){
+
+          playerHP += 120;
+          var1.itemCuraGrande--; 
+          printf("Você usou poção de cura grande e recuperou 120 HP!\n");
+
+        } else {
+         printf("Não há itens para usar!\n");
+        }
+
+      } else if (actInventorio == 0);
+        break;
+
+
+    actPlayer = validaEscolha(playerAP);
+
+}
         
     switch (actPlayer) {
       case 1:
@@ -128,6 +185,8 @@ atk2 = 40 + dado1;
         } 
       
       break;
+
+     
     }
 
     if (bossHP <= 0) break;
